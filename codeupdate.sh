@@ -24,9 +24,9 @@ prepareforUpdate() {
 updateCode() {
     cd $BASEDIR
     rsync -avr  $BASEDIR/Files/* /home/project/webapps/test/Files
-    rsync -avr $BASEDIR/static/* /home/project/webapps/test/static --delete --exclude
-    rsync -avr $BASEDIR/synapapp/* /home/project/webapps/test/synapapp --delete --exclude
-    rsync -avr $BASEDIR/templates/* /home/project/webapps/test/templates --delete --exclude
+    rsync -avr $BASEDIR/static/* /home/project/webapps/test/static
+    rsync -avr $BASEDIR/synapapp/* /home/project/webapps/test/synapapp
+    rsync -avr $BASEDIR/templates/* /home/project/webapps/test/templates
     
     systemctl daemon-reload
 }
