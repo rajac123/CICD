@@ -20,9 +20,9 @@ jobs:
         #gituser: ${{ secrets.GIT_USER }}
         #token: ${{ secrets.GIT_TOKEN }}
         script: |
-          cd /opt/main/Backend-code
+          cd /opt/main/CICD
           echo ${{ secrets.PASSWORD }} | sudo -S git pull https://github.com/rajac123/CICD.git
-          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/main/Backend-code/codeupdate.sh
-          echo ${{ secrets.PASSWORD }} | sudo -S /opt/main/Backend-code/codeupdate.sh
+          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/main/CICD/codeupdate.sh
+          echo ${{ secrets.PASSWORD }} | sudo -S /opt/main/CICD/codeupdate.sh
 
     
