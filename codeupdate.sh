@@ -23,10 +23,10 @@ prepareforUpdate() {
 
 updateCode() {
     cd $BASEDIR
-    rsync -aSP $BASEDIR/Files/* /home/project/webapps/test/Files --delete --exclude 
-    rsync -aSP $BASEDIR/static/* /home/project/webapps/test/static --delete --exclude
-    rsync -aSP $BASEDIR/synapapp/* /home/project/webapps/test/synapapp --delete --exclude
-    rsync -aSP $BASEDIR/templates/* /home/project/webapps/test/templates --delete --exclude
+    rsync -avr  $BASEDIR/Files/* /home/project/webapps/test/Files
+    rsync -avr $BASEDIR/static/* /home/project/webapps/test/static --delete --exclude
+    rsync -avr $BASEDIR/synapapp/* /home/project/webapps/test/synapapp --delete --exclude
+    rsync -avr $BASEDIR/templates/* /home/project/webapps/test/templates --delete --exclude
     
     systemctl daemon-reload
 }
