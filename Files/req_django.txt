@@ -1,0 +1,20 @@
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+python get-pip.py
+pip install djangorestframework
+pip install requests
+pip install django-cors-headers
+pip install django-debug-toolbar
+django_jsonfield_backport
+pip install django_jsonfield_backport
+
+pip install mysqlclient  // sudo apt-get install python3.7-dev
+pip install pdfkit
+pip install django-filter
+pip install django-mysql
+pip install xlwt
+pip install dateutil-br
+pip install sendgrid
+pip install pandas
+
+

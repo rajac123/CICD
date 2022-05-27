@@ -1,0 +1,131 @@
+
+<html>
+<head>
+	<title></title>
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style lang="css">
+.account .main-box {
+    border:1px solid #e0e0e0;
+    /* -webkit-box-shadow: 0 0 1px 1px rgba(255, 0, 0, 0.5); */
+    box-shadow: 1px 0px 4px 1px rgba(130, 130, 130, 0.5);
+    width: 100%;
+    display: block;
+    /* text-align: center; */
+    box-sizing: border-box;
+    padding: 20px auto;
+    margin: 20px auto;
+    background: #fff;
+}
+.account {
+    padding: 40px 40px;
+    background-color: cornsilk;
+    height: 100vh;
+    /* justify-self: center; */
+}
+img.verify-image {
+    width: 10%;
+    margin-left: 50px;
+}
+.boder-padding {
+    padding: 30px 10px;
+    /* border: 5px solid blue; */
+}
+.border-box {
+    border: 6px solid #5a5afb;
+    padding: 20px;
+}
+p.user-name {
+  padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+p.subscription {
+    text-align: center;
+    padding: 0px 50px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.verify-button {
+    text-align: center;
+    padding: 30px;
+}
+.verify-email-button {
+    color: #fff;
+    background: #23abfb;
+    border: 1px solid #23abfb;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.verify-email-button:hover {
+    color: #fff;
+    background-color: #0a8ad6;
+    border-color: #23abfb;
+}
+p.copy-url-note {
+    text-align: center;
+    font-size: 14px;
+    color: #a0a0a0;
+    margin: 0 !important;
+}
+a.copy-url-address {
+    font-size: 12px;
+    text-decoration: underline;
+    color: #222cfd;
+    cursor: pointer;
+  }
+.copy-url {
+  text-align: center;
+}
+p.create-account-subscription {
+    padding: 20px 30px;
+    text-align: center;
+    color: #8c8c8c;
+    font-weight: bold;
+}
+.regards {
+    padding: 0 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+p.regards-content {
+    margin: 0 !important;
+}
+</style>
+<body>
+<div>
+    <div class="account">
+        <div class="main-box">
+            <!-- <img src="static/images/img.png" class="verify-image" alt=""> -->
+            
+                {% load static %}
+            <h2>Welcome to Synapstics</h2>
+			
+            <div class="boder-padding">
+                <div class="border-box">
+                  <div class="inside-box">
+                    <p class="user-name"> Hi <b> {{ user }}</b></p>
+                    <p class="subscription">We're excited that <b>{{ user }}</b> are using <b>Digiblood</b> now. I just wanted to share a few quick things.</p>
+                    <p class="subscription">You are almost done. In order to start setting up an account with us, please verify your email address by clicking the button below.</p>
+                  </div>
+                  <div class="verify-button">                  	
+                      <a href="https://curegrid.co" class="btn btn-primary btn-lg verify-email-button">Verify Your Email</a>
+                  </div>
+
+                  <div class="create-account">
+                      <p class="create-account-subscription">And send us all your questions, big or small. We're always here to help. please mail us at support@synapstics.com</p>
+                  </div>
+                  <div class="regards">
+                      <p class="regards-content">All the best,</p>
+                      <p class="regards-content">Dr.Arun Babu Rajeswaran</p>
+                      <p class="regards-content">Co-Founder, Synapstics</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

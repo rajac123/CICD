@@ -1,0 +1,232 @@
+
+<html>
+	<head>
+		<title>Billing Invoice</title>
+        <style type="text/css">
+        .org__invoice-wrapper{
+            max-width: 538px;
+            max-height: 786px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .lvl1-head{
+        	width:100%;
+            
+        }
+        .lvl1-head img{
+            width:100%;
+        }
+        .lvl2-information{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .lvl3-product-details h3{
+            text-align: center;
+            font-size: 2rem;
+        }
+        .lvl2-information td{
+            padding: 3px 5px;
+        }
+        .details-inv-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+}
+.details-inv-table thead tr {
+    background-color: #bffaef;
+    color: #000;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid #dddddd;
+}
+.details-inv-table th,
+.details-inv-table td {
+    padding: 5px 7px;
+}
+.details-inv-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.details-inv-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.details-inv-table tbody tr:last-of-type {
+    border-bottom: 2px solid #bffaef;
+}
+.bld{
+    font-weight: bold;
+}
+.bottom-div{
+    position: relative;
+}
+.bottom-section{
+    margin:0 auto;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+        </style>
+    </head>
+    <body>
+        <div class='org__invoice-wrapper'>
+            <div class="lvl1-head">
+            	<table>
+            		<tr>
+            			<td style="position: relative; float: left;">
+            				<img src="./static/images/logo.jpg" alt="Careme logo" width="150px" height="150px" />
+            			</td>
+            			<td style="text-align: right;">
+                                CareMe Health India Pvt Ltd<br />
+                                Cresent Innovation & Incubation Council(CIIC)<br />
+                                Seethakatho Estate, Grand Southern Trunk Rd<br />
+                                Vandaloor,Chennai - 600048<br />
+            				 support@careme.health<br />
+                        +91 9739752752
+            			</td>
+            		</tr>
+            	</table>
+                
+            </div>
+            <div class="lvl2-information">
+                <div class='organizationdetails'>
+                    <table>
+                            <tr>
+                                <td class="bld">
+                                    Invoice To 
+                                </td>
+                                <td>
+                                    {{org_name}}  <br />
+                                    {{email}}  <br />
+                                    {{phone_num}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><br /></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bld">
+                                    Organization number
+                                </td>
+                                <td>
+                                    {{organization_number}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bld">
+                                    Invoice Date
+                                </td>
+                                <td>
+                                    {{invoice_date}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bld">
+                                    Order Number
+                                </td>
+                                <td>
+                                    {{Order_number}}
+                                </td>
+                            </tr>
+                        
+                    </table>
+                   
+                </div>
+            </div>
+            <div class="lvl3-product-details">
+                <h3>Invoice</h3>
+                <div class='details'>
+                    <table  class="details-inv-table">
+                        <thead>
+                            <tr>
+                                <td>
+                                    S.no
+                                </td>
+                                <td>
+                                    Product
+                                </td>
+                                <td>
+                                    Invoice Period
+                                </td>
+                                <td>
+                                    Product Amount
+                                </td>
+                                <td>
+                                    GST
+                                </td>
+                                <td>
+                                    Total Amount
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	{% for instance in data %}
+                            <tr>
+                                <td>
+                                    {{ forloop.counter }}
+                                </td>
+                                <td>
+                                    {{instance.product_name}}
+                                </td>
+                                <td>
+                                    {{instance.payment_date}}
+                                </td>
+                                <td>
+                                    INR {{instance.currentplan_amount}}
+                                </td>
+                                <td>
+                                    {{instance.gst}}
+                                </td>
+                                <td>
+                                    INR {{instance.paid_amount}}
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                    	<p><strong>Note:</strong> this invoice was already paid.</p>
+                       
+                </div>
+
+
+                </div>
+            </div>
+            
+        </div>
+        
+        
+
+       
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+</html>
