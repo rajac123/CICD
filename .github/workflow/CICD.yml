@@ -1,0 +1,28 @@
+name: Deployement
+
+on:  
+  push:
+  pull_request:
+    branches:
+      - dev
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        gituser: ${{ secrets.GIT_USER }}
+        token: ${{ secrets.GIT_TOKEN }}
+        script: |
+          cd /opt/main/Backend-code
+          echo ${{ secrets.PASSWORD }} | sudo -S git pull https://${{ secrets.GIT_USER }}:${{ secrets.GIT_TOKEN }}@github.com/SocialSwagHQ/Backend-code.git
+          echo ${{ secrets.PASSWORD }} | sudo -S chmod +x /opt/main/Backend-code/codeupdate.sh
+          echo ${{ secrets.PASSWORD }} | sudo -S /opt/main/Backend-code/codeupdate.sh
+
+    
