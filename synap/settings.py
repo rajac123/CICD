@@ -87,14 +87,6 @@ WSGI_APPLICATION = 'synap.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'devnewdb20',
-        'USER': 'devserver',
-        'PASSWORD': 'devserver',
-        'HOST': '165.232.179.251',
-        'PORT': '3306'
-}
 }
 
 # Password validation
@@ -142,6 +134,6 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Files')
 MEDIA_URL = '/media/'
 
-CASHFREE_APPID = '3815045b8b52447631760a9fb05183'
-CASHFREE_SECRET = 'f7b6a7c5d5389157a194e8f7f35c04004dfac9a1'
+CASHFREE_APPID = ''
+CASHFREE_SECRET = ''
 CASHFREE_RETURN_URL = 'https://synapstics.com/onboarding'
